@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ $(/usr/bin/docker ps |grep ubio) ]]; then
+  /usr/bin/docker stop ubio
+fi
+if [[ $(/usr/bin/docker ps -a |grep ubio) ]]; then
+  /usr/bin/docker rm ubio
+fi
