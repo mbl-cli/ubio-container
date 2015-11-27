@@ -53,9 +53,9 @@ RUN chmod 0600 /var/spool/cron/crontabs/www-data && \
     chown www-data:crontab /var/spool/cron/crontabs/www-data
 
 RUN apt-get -y purge git && \
-     apt-get clean && \
-     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-RUN apt-get clean && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    apt-get clean && \
     rm -rf /tmp/* /var/tmp/* && \
     apt-get -y autoremove
 
