@@ -34,8 +34,7 @@ RUN echo "#!/bin/sh" > /usr/sbin/policy-rc.d && \
 RUN add-apt-repository -y ppa:nginx/stable && \
     apt-get update && \
     apt-get install -qq -y nginx cron unzip && \
-    echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
-    chown -R www-data:www-data /var/www
+    echo "\ndaemon off;" >> /etc/nginx/nginx.conf 
 
 RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" \
       /etc/php5/fpm/php-fpm.conf
@@ -47,16 +46,18 @@ COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY config/default /etc/nginx/sites-available/default
 COPY config/start.sh /
 
-COPY config/crontab /var/spool/cron/crontabs/www-data
-
-RUN chmod 0600 /var/spool/cron/crontabs/www-data && \
-    chown www-data:crontab /var/spool/cron/crontabs/www-data
-
-RUN apt-get -y purge git && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    apt-get clean && \
+# WAIT (I like to have this when working on the machine)
+# RUN apt-get -y purge git && \
+#     apt-get clean && \
+#     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+RUN apt-get clean && \
     rm -rf /tmp/* /var/tmp/* && \
-    apt-get -y autoremove
+    apt-get -y autoremove && \
+    mkdir /data && \
+    ln -s /var/www /data/www
+
+# Conveniences for working on the machine:
+# RUN touch /.viminfo && \
+#     chown www-data:www-data /.viminfo && \
 
 CMD ["/start.sh"]

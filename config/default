@@ -32,6 +32,6 @@ server {
   location ~* \.(html|jpg|png|css|json|xsl|vbs|txt|csv|tsv|tab|sql|xslx|xsd|dtd|xml|pdf|doc|gz|zip)$ { }
 
   # Be strict:
-  location ~ /eol_php_code { deny  all; }
+  # location ~ /eol_php_code { deny  all; }
 
 }
