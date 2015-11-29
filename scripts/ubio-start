@@ -2,5 +2,6 @@
 
 /usr/bin/docker run -d --name ubio \
     -p 80:80 \
-    -v /ubio/www:/var/www \
+    -v /var/www:/var/www \
+    --env-file /opt/ubio/config/production.env
   mblab/ubio:master
