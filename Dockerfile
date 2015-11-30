@@ -1,7 +1,7 @@
 FROM ubuntu:precise
 MAINTAINER Dmitry Mozzherin
 
-ENV LAST_FULL_REBUILD 2015-10-29
+ENV LAST_FULL_REBUILD 2015-11-30
 
 RUN groupmod -g 1002 www-data && \
   usermod -s /bin/bash -u 1002 -g 1002 -d /home/www-data www-data
@@ -46,18 +46,10 @@ COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY config/default /etc/nginx/sites-available/default
 COPY config/start.sh /
 
-# WAIT (I like to have this when working on the machine)
-# RUN apt-get -y purge git && \
-#     apt-get clean && \
-#     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 RUN apt-get clean && \
     rm -rf /tmp/* /var/tmp/* && \
     apt-get -y autoremove && \
     mkdir /data && \
     ln -s /var/www /data/www
-
-# Conveniences for working on the machine:
-# RUN touch /.viminfo && \
-#     chown www-data:www-data /.viminfo && \
 
 CMD ["/start.sh"]
