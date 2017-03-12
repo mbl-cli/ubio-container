@@ -1,12 +1,10 @@
 #!/bin/bash
 
-if [ ! -d "/data/www" ]; then
-  cp -r /mnt/www /data
-  rm -rf /var/www
-  cp -f /variables.php /data/www
-  ln -s /data/www /var
-  chown -R www-data /var/www
-fi
+rsync -av --delete /mnt/www /data
+cp -f /variables.php /data/www
+rm -rf /var/www
+ln -s /data/www /var
+chown -R www-data /var/www
 
 chmod a+r /etc/resolv.conf
 chmod a+r /etc/hosts
