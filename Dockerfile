@@ -34,7 +34,7 @@ RUN echo "#!/bin/sh" > /usr/sbin/policy-rc.d && \
 RUN add-apt-repository -y ppa:nginx/stable && \
     apt-get update && \
     apt-get install -qq -y nginx cron unzip && \
-    echo "\ndaemon off;" >> /etc/nginx/nginx.conf 
+    echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
 RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" \
       /etc/php5/fpm/php-fpm.conf
@@ -49,7 +49,6 @@ COPY config/start.sh /
 RUN apt-get clean && \
     rm -rf /tmp/* /var/tmp/* && \
     apt-get -y autoremove && \
-    mkdir /data && \
-    ln -s /var/www /data/www
+    mkdir /data
 
 CMD ["/start.sh"]
