@@ -2,8 +2,9 @@
 
 if [ ! -d "/data/www" ]; then
   cp -r /mnt/www /data
+  rm -rf /var/www
   cp -f /variables.php /data/www
-  ln -s /data/www /var/www
+  ln -s /data/www /var
   chown -R www-data /var/www
 fi
 
