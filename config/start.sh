@@ -1,10 +1,9 @@
 #!/bin/bash
 
 rsync -av --delete /mnt/www /data
-cp -f /variables.php /data/www
 rm -rf /var/www
+chown -R www-data:www-data /data
 ln -s /data/www /var
-chown -R www-data /var/www
 
 chmod a+r /etc/resolv.conf
 chmod a+r /etc/hosts
