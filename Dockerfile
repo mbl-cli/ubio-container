@@ -44,7 +44,6 @@ COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY config/php.ini /usr/local/lib/php.ini
 COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY config/default /etc/nginx/sites-available/default
-COPY config/variables.php /
 COPY config/start.sh /
 
 RUN apt-get clean && \

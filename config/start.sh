@@ -1,9 +1,9 @@
 #!/bin/bash
 
-rsync -av --delete /mnt/www /data
-rm -rf /var/www
-chown -R www-data:www-data /data
-ln -s /data/www /var
+rsync -av --delete /mnt/www /var
+chown -R www-data:www-data /var/www
+ln -s /var/www /data
+echo "0.0.0.0 ubio.org www.ubio.org" >> /etc/hosts
 
 chmod a+r /etc/resolv.conf
 chmod a+r /etc/hosts
