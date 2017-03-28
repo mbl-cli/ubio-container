@@ -3,7 +3,7 @@
 
 class variables
 {
-    public static $namesWebServer = "http://<%= ENV['UBIO_WEB_SERVER'] %>"
+    public static $namesWebServer = "http://<%= ENV['UBIO_WEB_SERVER'] %>";
     public static $namesWebServerDirectory = "<%= ENV['UBIO_WEB_SERVER_DIR'] %>";
     public static $namesDatabaseServer = "<%= ENV['UBIO_DATABASE_SERVER'] %>";
     public static $namesDatabaseUser = "<%= ENV['UBIO_DATABASE_USER'] %>";
