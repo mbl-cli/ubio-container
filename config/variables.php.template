@@ -31,7 +31,7 @@ class variables
     //public static $taxonFinderServer = "plantae.mbl.edu";
     //public static $taxonFinderServer   = "names.mbl.edu";
     //public static $taxonFinderServer   = "128.128.164.84";
-    public static $taxonFinderServer   = "<%= ENV['UBIO_DATABASE_ADMIN_PASSWORD'] %>";
+    public static $taxonFinderServer   = "<%= ENV['UBIO_TAXONFINDER_SERVER'] %>";
 
     public static $portalWebServer = "http://<%= ENV['UBIO_WEB_SERVER'] %>/portal";
 
