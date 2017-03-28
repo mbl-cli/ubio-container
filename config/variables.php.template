@@ -1,0 +1,51 @@
+<?php
+
+
+class variables
+{
+    public static $namesWebServer = "http://<%= ENV['UBIO_WEB_SERVER'] %>"
+    public static $namesWebServerDirectory = "<%= ENV['UBIO_WEB_SERVER_DIR'] %>";
+    public static $namesDatabaseServer = "<%= ENV['UBIO_DATABASE_SERVER'] %>";
+    public static $namesDatabaseUser = "<%= ENV['UBIO_DATABASE_USER'] %>";
+    public static $namesDatabasePassword = "<%= ENV['UBIO_DATABASE_PASSWORD'] %>";
+    public static $namesDatabaseRootUser = "<%= ENV['UBIO_DATABASE_ADMIN_USER'] %>";
+    public static $namesDatabaseRootPassword = "<%= ENV['UBIO_DATABASE_ADMIN_PASSWORD'] %>";
+    public static $namesDatabaseNameNamebank = "namebank2";
+    public static $namesDatabaseNameNamebankOld = "namebank";
+    public static $namesDatabaseNameBHL = "bhl";
+    public static $namesDatabaseNameRSS = "rss";
+    public static $namesDatabaseNameClassificationbank = "classificationbank";
+    public static $namesDatabaseNameAuthors = "authors";
+    public static $namesDatabaseNameNZ = "NZ";
+    public static $namesDatabaseNameHershkovitz = "Hershkovitz";
+    public static $namesDatabaseNameInfobutton = "infoButton";
+    public static $namesDatabaseNameLigercat = "LigerCat";
+    public static $namesDatabaseNameIA = "internetArchive";
+    public static $namesDatabaseNameAGI = "agi";
+
+    public static $u = "A-ZÀÂÅÃÄÁÆČÇÉÈÊËÍÌÎÏÑÓÒÔØÕÖÚÙÛÜßĶŘŠŞŽŒ";
+    public static $l = "a-zááàâåãäăæčćçéèêëĕíìîïǐĭñńóòôøõöŏúùûüůśšşřğžźýÿœ";
+
+    //public static $taxonFinderServer = "animalia.mbl.edu";
+    //public static $taxonFinderServer = "128.128.175.245";
+    //public static $taxonFinderServer = "plantae.mbl.edu";
+    //public static $taxonFinderServer   = "names.mbl.edu";
+    //public static $taxonFinderServer   = "128.128.164.84";
+    public static $taxonFinderServer   = "<%= ENV['UBIO_DATABASE_ADMIN_PASSWORD'] %>";
+
+    public static $portalWebServer = "http://<%= ENV['UBIO_WEB_SERVER'] %>/portal";
+
+    public static $uioWebServer = "http://<%= ENV['UBIO_WEB_SERVER'] %>";
+    public static $uioDatabaseServer = "<%= ENV['UBIO_DATABASE_SERVER'] %>";
+    public static $uioDatabaseUser = "<%= ENV['UBIO_DATABASE_USER'] %>";
+    public static $uioDatabasePassword = "<%= ENV['UBIO_DATABASE_PASSWORD'] %>";
+    public static $uioDatabaseNameTNS = "tns_v2";
+}
+
+global $variables;
+
+
+
+
+
+?>

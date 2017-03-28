@@ -45,6 +45,7 @@ COPY config/php.ini /usr/local/lib/php.ini
 COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY config/default /etc/nginx/sites-available/default
 COPY config/start.sh /
+COPY config/variables.php.template /
 
 RUN apt-get clean && \
     rm -rf /tmp/* /var/tmp/* && \
