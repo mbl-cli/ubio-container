@@ -1,7 +1,7 @@
 #!/bin/bash
 
+erb /variables.php.template > /mnt/www/variables.php
 rsync -av --delete /mnt/www /var
-erb /variables.php.template > /var/www/variables.php
 chown -R www-data:www-data /var/www
 ln -s /var/www /data
 echo "0.0.0.0 ubio.org www.ubio.org" >> /etc/hosts
